@@ -32,7 +32,7 @@ export function Hero() {
               <img
                 src="/assets/images/cadmus-hero.png"
                 alt={siteInfo.name}
-                width={1024}
+                width={768}
                 height={1024}
                 loading="eager"
                 decoding="async"

@@ -481,7 +481,7 @@ body.nav-open { overflow: hidden; }
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background: #ffffff;
+  background: var(--cadmus-ink);
   clip-path: inset(8% 4% 8% 4% round 20px);
 }
 .cadmus-hero__portrait {
