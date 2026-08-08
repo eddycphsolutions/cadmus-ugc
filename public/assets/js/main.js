@@ -378,19 +378,15 @@
     });
   });
 
-  /* ── Header hide on scroll down ── */
+  /* ── Header sticky state on scroll ── */
   var header = doc.getElementById('cadmus-header');
   if (header) {
-    var lastY = window.scrollY;
-    window.addEventListener('scroll', function () {
-      var y = window.scrollY;
-      if (y > lastY && y > 120) {
-        header.classList.add('is-hidden');
-      } else {
-        header.classList.remove('is-hidden');
-      }
-      lastY = y;
-    }, { passive: true });
+    function updateHeaderScroll() {
+      header.classList.toggle('is-scrolled', window.scrollY > 24);
+    }
+
+    updateHeaderScroll();
+    window.addEventListener('scroll', updateHeaderScroll, { passive: true });
   }
 
   /* ── Niche hover lift (batch) ── */

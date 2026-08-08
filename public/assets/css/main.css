@@ -257,12 +257,20 @@ h1, h2, h3, p { margin: 0; }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  background: rgba(10, 10, 10, .85);
+  background: rgba(10, 10, 10, .72);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--cadmus-border);
-  transition: transform .45s var(--cadmus-ease), background .3s ease;
+  border-bottom: 1px solid transparent;
+  transition: transform .45s var(--cadmus-ease), background .3s ease, border-color .3s ease, box-shadow .3s ease;
 }
-.cadmus-header.is-hidden { transform: translateY(-100%); }
+.cadmus-header.is-scrolled {
+  background: rgba(10, 10, 10, .94);
+  border-bottom-color: var(--cadmus-border);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, .28);
+}
+.cadmus-header.is-scrolled .cadmus-header__inner {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
 .cadmus-header__inner {
   width: 100%;
   max-width: var(--cadmus-max);
@@ -272,6 +280,7 @@ h1, h2, h3, p { margin: 0; }
   align-items: center;
   justify-content: space-between;
   gap: var(--cadmus-space-3);
+  transition: padding .3s ease;
 }
 .cadmus-logo {
   font-family: var(--cadmus-heading);
