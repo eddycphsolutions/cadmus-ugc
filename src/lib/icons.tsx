@@ -1,5 +1,3 @@
-import { PortfolioPlatform } from "@/lib/config";
-
 const icons = {
   play: (
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -22,17 +20,4 @@ const icons = {
 
 export function Icon({ name }: { name: keyof typeof icons }) {
   return icons[name];
-}
-
-export function portfolioFallbackCard(url: string, platform: PortfolioPlatform, title: string) {
-  const platformName = platform === "tiktok" ? "TikTok" : "Instagram";
-  const label = title || `View on ${platformName}`;
-
-  return (
-    <a className="cadmus-embed-fallback" href={url} target="_blank" rel="noopener noreferrer">
-      <span className="cadmus-embed-fallback__platform">{platformName}</span>
-      <span className="cadmus-embed-fallback__label">{label}</span>
-      <Icon name={platform} />
-    </a>
-  );
 }

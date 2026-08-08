@@ -1,9 +1,11 @@
 import { captionLine } from "@/lib/caption";
 import { portfolioItems, portfolioPerPage } from "@/lib/config";
-import { portfolioFallbackCard } from "@/lib/icons";
+import { fetchPortfolioPreviews } from "@/lib/social-previews";
+import { PortfolioPreviewCard } from "@/components/PortfolioPreviewCard";
 
-export function Portfolio() {
-  const showPagination = portfolioItems.length > portfolioPerPage;
+export async function Portfolio() {
+  const items = await fetchPortfolioPreviews(portfolioItems);
+  const showPagination = items.length > portfolioPerPage;
 
   return (
     <section className="cadmus-section cadmus-portfolio" id="work">
@@ -12,7 +14,7 @@ export function Portfolio() {
           <h2 className="cadmus-section-title caption-timeline">
             {captionLine("Selected Work", "caption-line caption-line--words")}
           </h2>
-          <p className="cadmus-section-meta">{portfolioItems.length} pieces across Instagram and TikTok</p>
+          <p className="cadmus-section-meta">{items.length} pieces across Instagram and TikTok</p>
         </div>
 
         <div className="cadmus-filters" data-portfolio-filters data-reveal data-reveal-delay="1">
@@ -28,7 +30,7 @@ export function Portfolio() {
         </div>
 
         <div className="cadmus-portfolio__grid" data-portfolio-grid data-per-page={String(portfolioPerPage)}>
-          {portfolioItems.map((item, index) => (
+          {items.map((item, index) => (
             <article
               key={item.url}
               className="cadmus-portfolio__item has-animation"
@@ -39,7 +41,12 @@ export function Portfolio() {
               hidden={index >= portfolioPerPage ? true : undefined}
             >
               <div className="cadmus-portfolio__embed">
-                {portfolioFallbackCard(item.url, item.platform, item.title)}
+                <PortfolioPreviewCard
+                  url={item.url}
+                  platform={item.platform}
+                  title={item.title}
+                  thumbnailUrl={item.thumbnailUrl}
+                />
               </div>
               <div className="cadmus-portfolio__meta">
                 <span className="cadmus-portfolio__title">{item.title}</span>
