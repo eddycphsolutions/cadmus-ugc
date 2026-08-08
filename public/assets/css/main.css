@@ -583,15 +583,15 @@ body.nav-open { overflow: hidden; }
 .cadmus-about__media {
   margin: 0;
   min-height: clamp(28rem, 52vw, 44rem);
-  background: #ffffff;
+  background: var(--cadmus-ink);
   overflow: hidden;
 }
 .cadmus-about__media img {
   width: 100%;
   height: 100%;
   min-height: inherit;
-  object-fit: contain;
-  object-position: center center;
+  object-fit: cover;
+  object-position: center top;
 }
 .cadmus-about__content {
   display: flex;

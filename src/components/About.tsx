@@ -9,8 +9,8 @@ export function About() {
           <img
             src="/assets/images/cadmus-about.png"
             alt={siteInfo.name}
-            width={1017}
-            height={1024}
+            width={794}
+            height={700}
             loading="lazy"
             decoding="async"
           />
