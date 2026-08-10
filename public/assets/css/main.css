@@ -293,8 +293,8 @@ h1, h2, h3, p { margin: 0; }
 .cadmus-logo img {
   display: block;
   width: auto;
-  height: clamp(1.35rem, 3.6vw, 1.85rem);
-  max-width: min(11.5rem, 46vw);
+  height: clamp(1.75rem, 5vw, 2.35rem);
+  max-width: min(15rem, 58vw);
   filter: brightness(0) invert(1);
 }
 .cadmus-logo:hover { opacity: .7; }
