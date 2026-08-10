@@ -1,4 +1,4 @@
-import { navItems } from "@/lib/config";
+import { navItems, siteInfo } from "@/lib/config";
 
 export function SiteHeader() {
   return (
@@ -6,7 +6,13 @@ export function SiteHeader() {
       <header className="cadmus-header" id="cadmus-header">
         <div className="cadmus-header__inner">
           <a className="cadmus-logo" href="#" rel="home">
-            CT
+            <img
+              src="/assets/ctc.svg"
+              alt={siteInfo.name}
+              width={647}
+              height={194}
+              decoding="async"
+            />
           </a>
 
           <nav className="cadmus-nav" aria-label="Primary">

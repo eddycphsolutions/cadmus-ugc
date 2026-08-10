@@ -283,13 +283,19 @@ h1, h2, h3, p { margin: 0; }
   transition: padding .3s ease;
 }
 .cadmus-logo {
-  font-family: var(--cadmus-heading);
-  font-weight: 700;
-  font-size: 1.5rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  line-height: 0;
   color: var(--cadmus-white);
   transition: opacity .25s ease;
+}
+.cadmus-logo img {
+  display: block;
+  width: auto;
+  height: clamp(1.35rem, 3.6vw, 1.85rem);
+  max-width: min(11.5rem, 46vw);
+  filter: brightness(0) invert(1);
 }
 .cadmus-logo:hover { opacity: .7; }
 .cadmus-nav {
