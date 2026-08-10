@@ -1,4 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <rect width="64" height="64" rx="12" fill="#0a0a0a"/>
-  <text x="32" y="45" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#fff" text-anchor="middle">CT</text>
+  <g fill="#fff" transform="translate(8.5 13.5) scale(0.215)">
+    <rect x="48.94" y="33.17" width="123.48" height="29.35"/>
+    <rect x="96.01" y="47.84" width="29.35" height="85.13"/>
+    <rect x="19.91" y="61.71" width="29.35" height="78.19"/>
+    <rect x="172.1" y="61.71" width="29.35" height="78.19"/>
+    <rect x="191.14" y="112.67" width="29.35" height="59.62" transform="translate(-24.25 241.14) rotate(-57.91)"/>
+    <rect x="175.58" y="46.45" width="60.49" height="29.35" transform="translate(-5.06 101.46) rotate(-27.37)"/>
+    <rect x="48.94" y="139.53" width="123.48" height="29.35"/>
+  </g>
 </svg>
