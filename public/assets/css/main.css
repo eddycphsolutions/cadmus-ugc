@@ -1,5 +1,13 @@
 /* Cadmus UGC — Montoya-inspired typography and motion */
 
+@font-face {
+  font-family: KAREVO;
+  src: url("../fonts/KAREVO.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /*
   Breakpoints (max-width, desktop-first):
   - xl: > 1200px  default desktop
@@ -285,17 +293,24 @@ h1, h2, h3, p { margin: 0; }
 .cadmus-logo {
   display: inline-flex;
   align-items: center;
-  flex-shrink: 1;
+  flex: 0 1 auto;
+  flex-shrink: 0;
   min-width: 0;
   line-height: 0;
   color: var(--cadmus-white);
   transition: opacity .25s ease;
 }
-.cadmus-logo img {
+.cadmus-logo img,
+.cadmus-logo svg {
   display: block;
   width: auto;
   height: 2.35rem;
-  max-width: 15rem;
+  max-width: none;
+  aspect-ratio: 647.28 / 193.81;
+  object-fit: contain;
+  object-position: left center;
+  flex-shrink: 0;
+  color: var(--cadmus-white);
   filter: brightness(0) invert(1);
 }
 .cadmus-logo:hover { opacity: .7; }
@@ -1295,12 +1310,9 @@ body.nav-open { overflow: hidden; }
   .cadmus-header__actions .cadmus-btn--nav { display: none; }
   .cadmus-nav-toggle { display: block; }
   .cadmus-logo {
-    flex: 1 1 auto;
+    flex: 0 1 auto;
     max-width: calc(100% - 3.25rem);
-  }
-  .cadmus-logo img {
-    height: 2.35rem;
-    max-width: 100%;
+    overflow: visible;
   }
 
   .cadmus-hero {

@@ -22,6 +22,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&family=Six+Caps&display=swap"
           rel="stylesheet"
         />
+        <link rel="preload" href="/assets/fonts/KAREVO.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="stylesheet" href="/assets/css/main.css" />
       </head>
       <body className="cadmus-smooth-scroll">

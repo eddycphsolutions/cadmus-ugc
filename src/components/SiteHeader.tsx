@@ -1,19 +1,15 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { navItems, siteInfo } from "@/lib/config";
+
+const logoSvg = readFileSync(join(process.cwd(), "public/assets/ctc-inline.svg"), "utf8");
 
 export function SiteHeader() {
   return (
     <>
       <header className="cadmus-header" id="cadmus-header">
         <div className="cadmus-header__inner">
-          <a className="cadmus-logo" href="#" rel="home">
-            <img
-              src="/assets/ctc.svg"
-              alt={siteInfo.name}
-              width={647}
-              height={194}
-              decoding="async"
-            />
-          </a>
+          <a className="cadmus-logo" href="#" rel="home" aria-label={siteInfo.name} dangerouslySetInnerHTML={{ __html: logoSvg }} />
 
           <nav className="cadmus-nav" aria-label="Primary">
             {navItems.map((item) => (
